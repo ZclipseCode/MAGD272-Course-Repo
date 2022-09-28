@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class CodingIntro : MonoBehaviour
 {
-    string myName = "Brian";
-    int myAge = 19;
+    Rigidbody2D rb;
+    float hor, ver;
+    [SerializeField] private float speedMult = 2;
+    [SerializeField] private float jump = 1000;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //myAge++;
-        //Debug.Log("Hi, my name and age is " + myName + " " + myAge);
+        hor = Input.GetAxisRaw("Horizontal");
+        ver = Input.GetAxisRaw("Vertical");
+    }
 
-        Debug.Log(Input.GetAxis("Horizontal") + "-" + Input.GetAxis("Vertical"));
+    void FixedUpdate()
+    {
+        rb.velocity = new Vector2(hor * speedMult, rb.velocity.y);
+
+        if(Mathf.Abs(ver) > 0 && rb.velocity.y < jump)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.AddForce(new Vector2(0, ver * jump));
+        }
     }
 }
