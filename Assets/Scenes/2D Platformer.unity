@@ -1308,6 +1308,9 @@ GameObject:
   - component: {fileID: 474465173}
   - component: {fileID: 474465172}
   - component: {fileID: 474465174}
+  - component: {fileID: 474465175}
+  - component: {fileID: 474465177}
+  - component: {fileID: 474465176}
   m_Layer: 0
   m_Name: ghost-idle_3 (1)
   m_TagString: Untagged
@@ -1375,7 +1378,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 474465171}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.309999, y: 0.13000011, z: 0}
+  m_LocalPosition: {x: 8.34, y: 0.13000011, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1398,6 +1401,57 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.65625}
   m_Size: {x: 0.75, y: 1.3125}
   m_Direction: 0
+--- !u!114 &474465175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474465171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2572ef49e382c84a996908070eb7b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1368742661}
+  agroDistance: 10
+  stoppingDistance: 0.1
+  minimumDistance: 0.05
+--- !u!114 &474465176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474465171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea4926172f1cd8499cff2d67d60a18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animators: []
+  moveSpeed: 10
+--- !u!50 &474465177
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 474465171}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &481369133
 GameObject:
   m_ObjectHideFlags: 0
@@ -2351,6 +2405,9 @@ GameObject:
   - component: {fileID: 772875806}
   - component: {fileID: 772875805}
   - component: {fileID: 772875807}
+  - component: {fileID: 772875808}
+  - component: {fileID: 772875810}
+  - component: {fileID: 772875811}
   m_Layer: 0
   m_Name: ghost-idle_3
   m_TagString: Untagged
@@ -2441,6 +2498,57 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.65625}
   m_Size: {x: 0.75, y: 1.3125}
   m_Direction: 0
+--- !u!114 &772875808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772875804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2572ef49e382c84a996908070eb7b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1368742661}
+  agroDistance: 2
+  stoppingDistance: 0.1
+  minimumDistance: 0.05
+--- !u!50 &772875810
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772875804}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &772875811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772875804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bea4926172f1cd8499cff2d67d60a18e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animators: []
+  moveSpeed: 10
 --- !u!1 &780355197
 GameObject:
   m_ObjectHideFlags: 0
