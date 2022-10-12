@@ -17,6 +17,8 @@ public class PlatformMoveJump : MonoBehaviour
     [SerializeField] Transform groundCheckTransform;
     [SerializeField] float groundCheckRadius = 3f;
     [SerializeField] LayerMask groundCheckLayer;
+    [SerializeField] int maxJumps = 2;
+    [SerializeField] int jumpCount = 0;
 
     void Start()
     {
@@ -35,14 +37,31 @@ public class PlatformMoveJump : MonoBehaviour
         isGrounded = Grounded();
 
         //Jump
-        if (Input.GetKeyDown(jumpButton) && isGrounded)
+        if (Input.GetKeyDown(jumpButton))
         {
-            rb.velocity = new Vector2(horizontal * speed, jumpForce);
+            if (isGrounded || jumpCount < maxJumps)
+            {
+                rb.velocity = new Vector2(horizontal * speed, jumpForce);
+                jumpCount++;
+            }
+        }
+
+        //Adjust jump
+        if (Input.GetKeyUp(jumpButton) && rb.velocity.y > 0){
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y * 0.5f);
         }
     }
 
     public bool Grounded()
     {
-        return Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundCheckLayer);
+        if (Physics2D.OverlapCircle(groundCheckTransform.position, groundCheckRadius, groundCheckLayer))
+        {
+            jumpCount = 0;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

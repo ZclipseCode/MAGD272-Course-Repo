@@ -355,13 +355,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  jumpForce: 3
+  jumpForce: 5
   jumpButton: 32
   groundCheckTransform: {fileID: 752784254}
   groundCheckRadius: 0.2
   groundCheckLayer:
     serializedVersion: 2
     m_Bits: 64
+  maxJumps: 2
+  jumpCount: 0
 --- !u!212 &1709095035
 SpriteRenderer:
   m_ObjectHideFlags: 0
