@@ -37,13 +37,10 @@ public class PlatformMoveJump : MonoBehaviour
         isGrounded = Grounded();
 
         //Jump
-        if (Input.GetKeyDown(jumpButton))
+        if (Input.GetKeyDown(jumpButton) && (isGrounded || jumpCount < maxJumps))
         {
-            if (isGrounded || jumpCount < maxJumps)
-            {
                 rb.velocity = new Vector2(horizontal * speed, jumpForce);
                 jumpCount++;
-            }
         }
 
         //Adjust jump

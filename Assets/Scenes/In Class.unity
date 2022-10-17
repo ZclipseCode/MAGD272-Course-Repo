@@ -358,7 +358,7 @@ MonoBehaviour:
   jumpForce: 5
   jumpButton: 32
   groundCheckTransform: {fileID: 752784254}
-  groundCheckRadius: 0.2
+  groundCheckRadius: 0
   groundCheckLayer:
     serializedVersion: 2
     m_Bits: 64
