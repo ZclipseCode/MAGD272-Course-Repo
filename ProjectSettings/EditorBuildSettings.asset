@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Platformer Main Menu.unity
-    guid: 0d99e38984141484f97ff051a3539451
+    path: Assets/Scenes/All Main Menu.unity
+    guid: 17c31709bb75fe0428ace88aaae0917f
   - enabled: 1
     path: Assets/Scenes/2D Platformer.unity
     guid: 9772055477ea2c449a013427f799d1ed
@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Top-Down Space.unity
     guid: 634bb2b4f2636ef4cb244ff029263a7f
   - enabled: 1
-    path: Assets/Scenes/All Main Menu.unity
-    guid: 17c31709bb75fe0428ace88aaae0917f
+    path: Assets/Scenes/Platformer Main Menu.unity
+    guid: 0d99e38984141484f97ff051a3539451
   - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: a8586dbb2deda7c498fba04a90cea8ea
